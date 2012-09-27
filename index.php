@@ -9,7 +9,14 @@
             function carregarDeputados(elemento) {
                 document.getElementById("deputado").options.length = 0;
                 var estado = elemento.options[elemento.selectedIndex].value;
-                if(estado == 0) return;
+                var option = document.createElement("option");
+                option.text = "Selecione...";
+                option.value = 0;
+                var select = document.getElementById("deputado");
+                select.appendChild(option);                    
+                if(estado == 0) {
+                    return;
+                }
                 var query = '../deputado/deputado/Dep_Lista.asp?Legislatura=54&Partido=QQ&SX=QQ&Todos=None&condic=QQ&forma=lista&UF=';
                 //                var query = '../deputado/deputados.html?UF=';
 
