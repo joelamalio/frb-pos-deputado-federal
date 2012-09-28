@@ -1,5 +1,7 @@
 /*carrega o select com a lista de deputados do estado em forma de select-html*/
 function carregarComboDeputadosPorEstado(estado, select) {
+    select.options.length = 0;
+    criarOptionHtml("Selecione...", 0, select);
      var query = '../deputado/deputado/Dep_Lista.asp?Legislatura=54&Partido=QQ&SX=QQ&Todos=None&condic=QQ&forma=lista&UF=' + estado;
     //var query = '../deputado/deputado/deputados.html?UF=';
     chamadaAjaxPadrao(query, function(data) {
@@ -20,7 +22,8 @@ function obtemInformacoesDeputado(idDeputado) {
     var divPresenca = document.getElementById("presenca");
     var divNoticias = document.getElementById("noticias");
     var divTwitter = document.getElementById("twitter");
-    criarObjetoDeputado(idDeputado, divDetalhes, divPresenca, divNoticias, divTwitter);
+    var divFacebook = document.getElementById("facebook");
+    criarObjetoDeputado(idDeputado, divDetalhes, divPresenca, divNoticias, divTwitter, divFacebook);
 }
 
 function criaDetalhesDeputado(deputado, divDestino) {
@@ -39,7 +42,7 @@ function criaDetalhesDeputado(deputado, divDestino) {
     divDestino.appendChild(tabela);
 }
 
-function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias, divTwitter) {
+function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias, divTwitter, divFacebook) {
     // TODO - 
     var queryConsulta = "dep_Detalhe.asp?id=" + idDeputado;
     //var queryConsulta = "deputado.html?id=" + idDeputado;
@@ -74,6 +77,7 @@ function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias, d
         criaDetalhesDeputado(deputado, divDestino);
         obterNoticias(deputado.nome, divNoticias);
         obterTwitter(deputado.nome, divTwitter);
+        obterFacebook(deputado.nome, divFacebook);
         carregarProjetos(deputado.id);
     });
 }
@@ -133,6 +137,51 @@ function obterNoticias(nomeDeputado, divNoticias) {
             divNoticias.appendChild(tabela);
         }
     }); 
+}
+
+
+function obterFacebook(nomeDeputado, divFacebook) {
+    divFacebook.innerHTML = "";
+    var nome = replaceAll(nomeDeputado.trim()," ", "+");
+    var query = "../face/search?type=POST&q=" + nome;
+    $.ajax({
+        url: query,
+        dataType: "json",
+        success: function (json) {
+            var tabela = document.createElement("table");
+            tabela.innerHTML = "";
+            tabela.setAttribute("class", "news");
+            for(var i = 0; i < json.data.length; i++) {
+                var facePost = json.data[i];
+                adicionarFacebook(tabela, facePost);
+            }
+            divFacebook.appendChild(tabela);
+        }
+    }); 
+}
+
+function adicionarFacebook(tabela, facePost) {
+    
+    if(facePost != undefined) {
+        var imagem;
+        if(facePost.picture != undefined) {
+            imagem = facePost.picture;
+        } else {
+            imagem = "images/noticia.jpg"
+        }
+        var titulo = facePost.from.name;
+        var conteudo = facePost.caption;
+        var link = facePost.link;
+        var tr = document.createElement("tr");
+        var tdImg = document.createElement("td");
+        tdImg.innerHTML = '<img style="align: left;" width="60" height="60" src="'+ imagem +'"/>';
+        tr.appendChild(tdImg);
+        var tdFace = document.createElement("td");
+        var linkDecoded = decodeURIComponent(link);
+        tdFace.innerHTML = '<strong><a href="' + linkDecoded + '" target="_blank">' + titulo + '</a></strong><br/><span>'+ conteudo + '</span>';
+        tr.appendChild(tdFace);
+        tabela.appendChild(tr);
+    }
 }
 
 function obterTwitter(nomeDeputado, divNoticias) {
