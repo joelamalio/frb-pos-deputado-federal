@@ -1,7 +1,7 @@
 /*carrega o select com a lista de deputados do estado em forma de select-html*/
 function carregarComboDeputadosPorEstado(estado, select) {
-    // var query = '../deputado/deputado/Dep_Lista.asp?Legislatura=54&Partido=QQ&SX=QQ&Todos=None&condic=QQ&forma=lista&UF=' + estado;
-    var query = '../deputado/deputado/deputados.html?UF=';
+     var query = '../deputado/deputado/Dep_Lista.asp?Legislatura=54&Partido=QQ&SX=QQ&Todos=None&condic=QQ&forma=lista&UF=' + estado;
+    //var query = '../deputado/deputado/deputados.html?UF=';
     chamadaAjaxPadrao(query, function(data) {
         var deputados = $(data).find("#content");
         var lista = deputados.find("ul li a");
@@ -15,7 +15,11 @@ function carregarComboDeputadosPorEstado(estado, select) {
 }
 
 /*Obtem as informacoes do deputado e adiciona na div de destino*/
-function obtemInformacoesDeputado(idDeputado, divDetalhes, divPresenca, divNoticias, divTwitter) {
+function obtemInformacoesDeputado(idDeputado) {
+    var divDetalhes = document.getElementById("detalhe");
+    var divPresenca = document.getElementById("presenca");
+    var divNoticias = document.getElementById("noticias");
+    var divTwitter = document.getElementById("twitter");
     criarObjetoDeputado(idDeputado, divDetalhes, divPresenca, divNoticias, divTwitter);
 }
 
@@ -36,8 +40,9 @@ function criaDetalhesDeputado(deputado, divDestino) {
 }
 
 function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias, divTwitter) {
-    // TODO - var queryConsulta = "dep_Detalhe.asp?id=" + idDeputado;
-    var queryConsulta = "deputado.html?id=" + idDeputado;
+    // TODO - 
+    var queryConsulta = "dep_Detalhe.asp?id=" + idDeputado;
+    //var queryConsulta = "deputado.html?id=" + idDeputado;
     var query = '../deputado/deputado/' + queryConsulta;
     chamadaAjaxPadrao(query, function(data) {
         var deputado = {};
@@ -71,12 +76,12 @@ function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias, d
         obterTwitter(deputado.nome, divTwitter);
         carregarProjetos(deputado.id);
     });
-    return deputado;
 }
 
 function obterPercentalPresentaDeputado(matriculaDeputado, divPresenca) {
-    //TODO    var queryConsulta = "RelPresencaPlenario.asp?nuLegislatura=54&dtInicio=01/01/2012&dtFim=28/09/2012&nuMatricula="+ matriculaDeputado;
-    var queryConsulta = "presenca.html?nuLegislatura=54&dtInicio=01/01/2012&dtFim=28/09/2012&nuMatricula="+ matriculaDeputado;
+    //TODO    
+    var queryConsulta = "RelPresencaPlenario.asp?nuLegislatura=54&dtInicio=01/01/2012&dtFim=28/09/2012&nuMatricula="+ matriculaDeputado;
+    //var queryConsulta = "presenca.html?nuLegislatura=54&dtInicio=01/01/2012&dtFim=28/09/2012&nuMatricula="+ matriculaDeputado;
     var query = '../deputado/deputado/' + queryConsulta;
     divPresenca.innerHTML = "";
     chamadaAjaxPadrao(query, function(data) {
@@ -88,8 +93,8 @@ function obterPercentalPresentaDeputado(matriculaDeputado, divPresenca) {
 }
 
 function carregarProjetos(idDeputado) {
-    //                var query = '../deputado/sileg/Prop_lista.asp?Limite=N&Autor=' + idDeputado;
-    var query = '../deputado/sileg/projetos.html?Limite=N&Autor=' + idDeputado;
+    var query = '../deputado/sileg/Prop_lista.asp?Limite=N&Autor=' + idDeputado;
+    //var query = '../deputado/sileg/projetos.html?Limite=N&Autor=' + idDeputado;
     var ajax = new XMLHttpRequest();
     ajax.open('GET', query, true);
     ajax.onreadystatechange = function() {
@@ -111,9 +116,9 @@ function carregarProjetos(idDeputado) {
 
 function obterNoticias(nomeDeputado, divNoticias) {
     divNoticias.innerHTML = "";
-    var nome = nomeDeputado.replace(" ", "+");
-//    var query = "../news/news?v=1.0&q=" + nome;
-    var query = "../news/news.txt";
+    var nome = replaceAll(nomeDeputado.trim()," ", "+");
+    var query = "../news/news?v=1.0&q=" + nome;
+//    var query = "../news/news.txt";
     $.ajax({
         url: query,
         dataType: "json",
@@ -132,9 +137,9 @@ function obterNoticias(nomeDeputado, divNoticias) {
 
 function obterTwitter(nomeDeputado, divNoticias) {
     divNoticias.innerHTML = "";
-    var nome = nomeDeputado.replace(" ", "+");
-    //    var query = "../news/news?v=1.0&q=" + nome;
-    var query = "../twitter/twitter.txt";
+    var nome = replaceAll(nomeDeputado.trim()," ", "+");
+    var query = "../twitter/search.json?&q=" + nome;
+    //var query = "../twitter/twitter.txt";
     $.ajax({
         url: query,
         dataType: "json",
@@ -254,4 +259,11 @@ function chamadaAjaxPadrao(query, callBack) {
             });
         }
     });     
+}
+
+function replaceAll(string, token, newtoken) {
+	while (string.indexOf(token) != -1) {
+ 		string = string.replace(token, newtoken);
+	}
+	return string;
 }
