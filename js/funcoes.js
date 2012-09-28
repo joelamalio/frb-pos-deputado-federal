@@ -3,7 +3,6 @@ function carregarComboDeputadosPorEstado(estado, select) {
     select.options.length = 0;
     criarOptionHtml("Selecione...", 0, select);
      var query = '../deputado/deputado/Dep_Lista.asp?Legislatura=54&Partido=QQ&SX=QQ&Todos=None&condic=QQ&forma=lista&UF=' + estado;
-    //var query = '../deputado/deputado/deputados.html?UF=';
     chamadaAjaxPadrao(query, function(data) {
         var deputados = $(data).find("#content");
         var lista = deputados.find("ul li a");
@@ -43,9 +42,7 @@ function criaDetalhesDeputado(deputado, divDestino) {
 }
 
 function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias, divTwitter, divFacebook) {
-    // TODO - 
     var queryConsulta = "dep_Detalhe.asp?id=" + idDeputado;
-    //var queryConsulta = "deputado.html?id=" + idDeputado;
     var query = '../deputado/deputado/' + queryConsulta;
     chamadaAjaxPadrao(query, function(data) {
         var deputado = {};
@@ -75,9 +72,13 @@ function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias, d
             return true;
         });
         criaDetalhesDeputado(deputado, divDestino);
-        obterNoticias(deputado.nome, divNoticias);
-        obterTwitter(deputado.nome, divTwitter);
-        obterFacebook(deputado.nome, divFacebook);
+        var nomeDeputado = $("#deputado").find(":selected").text();
+        nomeDeputado = removerAcento(nomeDeputado.trim());
+        nomeDeputado = replaceAll(nomeDeputado, " ", "+");
+        deputado.nomeComum = "Deputado+" + nomeDeputado;
+        obterNoticias(deputado.nomeComum, divNoticias);
+        obterTwitter(deputado.nomeComum, divTwitter);
+        obterFacebook(deputado.nomeComum, divFacebook);
         carregarProjetos(deputado.id);
     });
 }
@@ -120,8 +121,8 @@ function carregarProjetos(idDeputado) {
 
 function obterNoticias(nomeDeputado, divNoticias) {
     divNoticias.innerHTML = "";
-    var nome = replaceAll(nomeDeputado.trim()," ", "+");
-    var query = "../news/news?v=1.0&q=" + nome;
+    
+    var query = "../news/news?v=1.0&q=" + nomeDeputado;
 //    var query = "../news/news.txt";
     $.ajax({
         url: query,
@@ -142,8 +143,7 @@ function obterNoticias(nomeDeputado, divNoticias) {
 
 function obterFacebook(nomeDeputado, divFacebook) {
     divFacebook.innerHTML = "";
-    var nome = replaceAll(nomeDeputado.trim()," ", "+");
-    var query = "../face/search?type=POST&q=" + nome;
+    var query = "../face/search?type=POST&q=" + nomeDeputado;
     $.ajax({
         url: query,
         dataType: "json",
@@ -186,8 +186,7 @@ function adicionarFacebook(tabela, facePost) {
 
 function obterTwitter(nomeDeputado, divNoticias) {
     divNoticias.innerHTML = "";
-    var nome = replaceAll(nomeDeputado.trim()," ", "+");
-    var query = "../twitter/search.json?&q=" + nome;
+    var query = "../twitter/search.json?&q=" + nomeDeputado;
     //var query = "../twitter/twitter.txt";
     $.ajax({
         url: query,
@@ -311,8 +310,18 @@ function chamadaAjaxPadrao(query, callBack) {
 }
 
 function replaceAll(string, token, newtoken) {
-	while (string.indexOf(token) != -1) {
- 		string = string.replace(token, newtoken);
-	}
-	return string;
+    while (string.indexOf(token) != -1) {
+        string = string.replace(token, newtoken);
+    }
+    return string;
+}
+
+function removerAcento(text) {
+    text = text.replace(new RegExp('[ÁÀÂÃ]','gi'), 'A');
+    text = text.replace(new RegExp('[ÉÈÊ]','gi'), 'E');
+    text = text.replace(new RegExp('[ÍÌÎ]','gi'), 'I');
+    text = text.replace(new RegExp('[ÓÒÔÕ]','gi'), 'O');
+    text = text.replace(new RegExp('[ÚÙÛ]','gi'), 'U');
+    text = text.replace(new RegExp('[Ç]','gi'), 'C');
+    return text;
 }
