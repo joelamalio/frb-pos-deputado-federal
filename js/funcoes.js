@@ -15,8 +15,8 @@ function carregarComboDeputadosPorEstado(estado, select) {
 }
 
 /*Obtem as informacoes do deputado e adiciona na div de destino*/
-function obtemInformacoesDeputado(idDeputado, divDetalhes, divPresenca, divNoticias) {
-    criarObjetoDeputado(idDeputado, divDetalhes, divPresenca, divNoticias);
+function obtemInformacoesDeputado(idDeputado, divDetalhes, divPresenca, divNoticias, divTwitter) {
+    criarObjetoDeputado(idDeputado, divDetalhes, divPresenca, divNoticias, divTwitter);
 }
 
 function criaDetalhesDeputado(deputado, divDestino) {
@@ -35,7 +35,7 @@ function criaDetalhesDeputado(deputado, divDestino) {
     divDestino.appendChild(tabela);
 }
 
-function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias) {
+function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias, divTwitter) {
     // TODO - var queryConsulta = "dep_Detalhe.asp?id=" + idDeputado;
     var queryConsulta = "deputado.html?id=" + idDeputado;
     var query = '../deputado/deputado/' + queryConsulta;
@@ -68,6 +68,7 @@ function criarObjetoDeputado(idDeputado, divDestino, divPresenca, divNoticias) {
         });
         criaDetalhesDeputado(deputado, divDestino);
         obterNoticias(deputado.nome, divNoticias);
+        obterTwitter(deputado.nome, divTwitter);
         carregarProjetos(deputado.id);
     });
     return deputado;
@@ -127,6 +128,48 @@ function obterNoticias(nomeDeputado, divNoticias) {
             divNoticias.appendChild(tabela);
         }
     }); 
+}
+
+function obterTwitter(nomeDeputado, divNoticias) {
+    divNoticias.innerHTML = "";
+    var nome = nomeDeputado.replace(" ", "+");
+    //    var query = "../news/news?v=1.0&q=" + nome;
+    var query = "../twitter/twitter.txt";
+    $.ajax({
+        url: query,
+        dataType: "json",
+        success: function (json) {
+            var tabela = document.createElement("table");
+            tabela.innerHTML = "";
+            tabela.setAttribute("class", "news");
+            for(var i = 0; i < json.results.length; i++) {
+                var twitte = json.results[i];
+                adicionarTwitte(tabela, twitte);
+            }
+            divNoticias.appendChild(tabela);
+        }
+    }); 
+}
+
+function adicionarTwitte(tabela, twitte) {
+    if(twitte != undefined) {
+        var imagem;
+        if(twitte.profile_image_url != undefined) {
+            imagem = twitte.profile_image_url;
+        } else {
+            imagem = "images/noticia.jpg"
+        }
+        var titulo = "@" + twitte.from_user;
+        var conteudo = twitte.text;
+        var tr = document.createElement("tr");
+        var tdImg = document.createElement("td");
+        tdImg.innerHTML = '<img style="align: left;" width="60" height="60" src="'+ imagem +'"/>';
+        tr.appendChild(tdImg);
+        var tdTwitte = document.createElement("td");
+        tdTwitte.innerHTML = '<strong>' + titulo + '</strong><br/><span>'+ conteudo + '</span>';
+        tr.appendChild(tdTwitte);
+        tabela.appendChild(tr);
+    }
 }
 
 function adicionarNoticia(tabela, noticia) {

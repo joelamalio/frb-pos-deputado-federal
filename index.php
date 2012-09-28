@@ -1,47 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head id="head">
-        <title>Kraken | Deputado Federal</title>
+        <title>CIRCO | Deputado Federal</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="css/styles.css" />
         <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="js/funcoes.js"></script>
-        <script type="text/javascript">
-            function carregarProjetos(idDeputado) {
-                //                var query = '../deputado/sileg/Prop_lista.asp?Limite=N&Autor=' + idDeputado;
-                var query = '../deputado/sileg/projetos.html?Limite=N&Autor=' + idDeputado;
-                var ajax = new XMLHttpRequest();
-                ajax.open('GET', query, true);
-                ajax.onreadystatechange = function() {
-                    if(ajax.readyState == 4) {
-                        var divProjetos = document.getElementById("projetos");
-                        divProjetos.innerHTML = "";
-                        var tabela = document.createElement("table");
-                        var projetos = $(ajax.responseText).find("tbody.coresAlternadas");
-                        var linha = "";
-                        projetos.each(function(i) {
-                            linha += $(projetos[i]).html();
-                        });
-                        tabela.innerHTML = linha;
-                        divProjetos.appendChild(tabela);
-                    }
-                };
-                ajax.send(null);
-            }
-        </script>
     </head>
     <body id="corpo">
         <img src="images/loader.gif" class="loader" alt="loading" />
         <form name="form1">
             <div id="page-wrap">
 
-                <img src="images/kraken.png" alt="kraken" id="pic" />
+                <img src="images/palhaco_brasil.jpg" alt="palhaco" id="pic" width="300" />
 
                 <div id="contact-info" class="vcard">
 
-                    <h1 class="fn">Kraken</h1>
+                    <h1 class="fn">Circo</h1>
 
-                    <p>
+                    <p class="paragrafo">
                         <span>Componentes:</span><br />
                         <a class="email" href="https://github.com/antoniojunior87/" target="_blank">Antonio Fonseca</a><br />
                         <a class="email" href="https://github.com/brunomsc/" target="_blank">Bruno Magalhães</a><br />
@@ -51,7 +28,7 @@
                 </div>
 
                 <div id="objective">
-                    <p>
+                    <p class="paragrafo">
                         Projeto da matéria Aplicações Web com Ajax e Web 2.0 no curso Componentes Distribuídos Web da Pós-Graduação da Faculdade Ruy Barbosa.
                     </p>
                 </div>
@@ -99,7 +76,7 @@
 
                     <dt>Deputado</dt>
                     <dd>
-                        <select id="deputado" name="deputado" onchange="obtemInformacoesDeputado(this.value, detalhe, presenca, noticias)">
+                        <select id="deputado" name="deputado" onchange="obtemInformacoesDeputado(this.value, detalhe, presenca, noticias, twitter)">
                             <option value="0">Selecione...</option>
                         </select>
                     </dd>
@@ -123,6 +100,13 @@
                     <dt>Noticias</dt>
                     <dd>
                         <div id="noticias" name="noticias"></div>
+                    </dd> 
+
+                    <dd class="clear"></dd>
+                    
+                    <dt>Twitter</dt>
+                    <dd>
+                        <div id="twitter" name="twitter"></div>
                     </dd> 
 
                     <dd class="clear"></dd>

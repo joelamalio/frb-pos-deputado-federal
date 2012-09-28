@@ -1,6 +1,332 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
+var a = {
+    "completed_in":0.04,
+    "max_id":251690012465315843,
+    "max_id_str":"251690012465315843",
+    "next_page":"?page=2&max_id=251690012465315843&q=acelino",
+    "page":1,
+    "query":"acelino",
+    "refresh_url":"?since_id=251690012465315843&q=acelino",
+    "results":[{
+        "created_at":"Fri, 28 Sep 2012 14:29:09 +0000",
+        "from_user":"SomosGuareschi",
+        "from_user_id":549458006,
+        "from_user_id_str":"549458006",
+        "from_user_name":"Somos Guareschi",
+        "geo":null,
+        "id":251690012465315843,
+        "id_str":"251690012465315843",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/2549697661\/h0laxzvxq7mvr0u714rg_normal.jpeg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/2549697661\/h0laxzvxq7mvr0u714rg_normal.jpeg",
+        "source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+        "text":"Hoje, com\u00edcio na Acelino Flores! \u00c0s 18horas. Veja nossas outras agendas aqui: http:\/\/t.co\/mhS4DZrl",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Fri, 28 Sep 2012 13:00:48 +0000",
+        "from_user":"dep_geraldo",
+        "from_user_id":37711911,
+        "from_user_id_str":"37711911",
+        "from_user_name":"Geraldo Resende",
+        "geo":null,
+        "id":251667775926464513,
+        "id_str":"251667775926464513",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1226286757\/tratorcombanveira_normal.jpg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1226286757\/tratorcombanveira_normal.jpg",
+        "source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+        "text":"Bom dia amigos e amigas, hj estarei na querida Sidrol\u00e2ndia para um com\u00edcio em apoio ao candidato a prefeito Acelino de Souza (PMDB).",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Fri, 28 Sep 2012 13:00:17 +0000",
+        "from_user":"falamsnoticias",
+        "from_user_id":176082863,
+        "from_user_id_str":"176082863",
+        "from_user_name":"Fala MS Not\u00edcias",
+        "geo":null,
+        "id":251667648683835392,
+        "id_str":"251667648683835392",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1098379135\/avatar_normal.jpg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1098379135\/avatar_normal.jpg",
+        "source":"&lt;a href=&quot;http:\/\/crowdfavorite.com\/wordpress\/plugins\/twitter-tools\/&quot;&gt;falams&lt;\/a&gt;",
+        "text":"No site: Com\u00edcio de Acelino e passeio cicl\u00edstico de Enelvo deve movimentar final de semana  http:\/\/t.co\/xfRqwc6C",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Thu, 27 Sep 2012 17:51:59 +0000",
+        "from_user":"gazetaesportes",
+        "from_user_id":25944417,
+        "from_user_id_str":"25944417",
+        "from_user_name":"GazetaEsportes.com",
+        "geo":null,
+        "id":251378669753356288,
+        "id_str":"251378669753356288",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1164454113\/icone_vazado210_normal.png",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1164454113\/icone_vazado210_normal.png",
+        "source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+        "text":"MMA - Rival de Gabriel Moraes no Jungle Fight \u00e9 disc\u00edpulo de Acelino Pop\u00f3 Freitas - http:\/\/t.co\/ClfQdRXH",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Thu, 27 Sep 2012 17:28:02 +0000",
+        "from_user":"dantast",
+        "from_user_id":175854394,
+        "from_user_id_str":"175854394",
+        "from_user_name":"Dantas",
+        "geo":null,
+        "id":251372639921266689,
+        "id_str":"251372639921266689",
+        "iso_language_code":"es",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/2627807789\/iq2kwiivifpx1ojlqv7g_normal.jpeg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/2627807789\/iq2kwiivifpx1ojlqv7g_normal.jpeg",
+        "source":"&lt;a href=&quot;http:\/\/www.echofon.com\/&quot;&gt;Echofon&lt;\/a&gt;",
+        "text":"@steeeiner B\u00f4b\u00f3, eb\u00f3, Acelino de Freitas... vamos todos morrer mesmo.",
+        "to_user":"steeeiner",
+        "to_user_id":8396262,
+        "to_user_id_str":"8396262",
+        "to_user_name":"Marcelo Dias",
+        "in_reply_to_status_id":251370656682352640,
+        "in_reply_to_status_id_str":"251370656682352640"
+    },{
+        "created_at":"Thu, 27 Sep 2012 13:48:50 +0000",
+        "from_user":"ACTMtenisdemesa",
+        "from_user_id":271630950,
+        "from_user_id_str":"271630950",
+        "from_user_name":"ACTMmacap\u00e1",
+        "geo":null,
+        "id":251317476690894849,
+        "id_str":"251317476690894849",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1335078294\/ACTM_7_normal.jpg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1335078294\/ACTM_7_normal.jpg",
+        "source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+        "text":"A ACTM Itaim Macap\u00e1, est\u00e1 localizada na Av. Acelino de Le\u00e3o, 41 - Trem.",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Thu, 27 Sep 2012 03:04:47 +0000",
+        "from_user":"com_mdavid",
+        "from_user_id":610382455,
+        "from_user_id_str":"610382455",
+        "from_user_name":"marcos augusto david",
+        "geo":null,
+        "id":251155395786186752,
+        "id_str":"251155395786186752",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/sticky\/default_profile_images\/default_profile_4_normal.png",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/sticky\/default_profile_images\/default_profile_4_normal.png",
+        "source":"&lt;a href=&quot;http:\/\/twitter.com\/download\/android&quot;&gt;Twitter for Android&lt;\/a&gt;",
+        "text":"Acabei de publicar uma foto http:\/\/t.co\/ZJ8BS3tR -- Acelino Pop\u00f3 Freitas (@popofreitas)",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Tue, 25 Sep 2012 16:20:37 +0000",
+        "from_user":"tvnewssaj1",
+        "from_user_id":278487866,
+        "from_user_id_str":"278487866",
+        "from_user_name":"News SAJ",
+        "geo":null,
+        "id":250630900507873280,
+        "id_str":"250630900507873280",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1915251405\/NOVO_LOGO_DA_NEWS__normal.jpg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1915251405\/NOVO_LOGO_DA_NEWS__normal.jpg",
+        "source":"&lt;a href=&quot;http:\/\/www.facebook.com\/twitter&quot;&gt;Facebook&lt;\/a&gt;",
+        "text":"Deputado Acelino \"Pop\u00f3\" Freitas tamb\u00e9m acessa a News SAJ! http:\/\/t.co\/64IqsK0e",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Tue, 25 Sep 2012 12:32:44 +0000",
+        "from_user":"simimg",
+        "from_user_id":34633081,
+        "from_user_id_str":"34633081",
+        "from_user_name":"Simi",
+        "geo":null,
+        "id":250573548987502592,
+        "id_str":"250573548987502592",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/2305250894\/jukih3bc94f3sinc7i6z_normal.jpeg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/2305250894\/jukih3bc94f3sinc7i6z_normal.jpeg",
+        "source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+        "text":"Professor Titular do departamento da Fitopalogia da UFV, Acelino Afenas discute sobre o conhecimento aplicado \u00e0s necessidades do mercado.",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Tue, 25 Sep 2012 03:23:40 +0000",
+        "from_user":"cetolead",
+        "from_user_id":725936845,
+        "from_user_id_str":"725936845",
+        "from_user_name":"Brook Dolan",
+        "geo":null,
+        "id":250435373241614336,
+        "id_str":"250435373241614336",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/sticky\/default_profile_images\/default_profile_4_normal.png",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/sticky\/default_profile_images\/default_profile_4_normal.png",
+        "source":"&lt;a href=&quot;http:\/\/twitpic.com&quot;&gt;Twitpic&lt;\/a&gt;",
+        "text":"Movie Chico Rei Pda\n\n\nChico Rei movie download\n\nActors:\nCl\u00c3\u00a1udio Marzo\nCarlos Kroeber\nSeverino d'Acelino\n http:\/\/t.co\/nzMsqcYl",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Tue, 25 Sep 2012 00:50:12 +0000",
+        "from_user":"KellyCora",
+        "from_user_id":220194274,
+        "from_user_id_str":"220194274",
+        "from_user_name":"~ Le Eu",
+        "geo":null,
+        "id":250396752526589952,
+        "id_str":"250396752526589952",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/2550324791\/jyyprdxh5bovfgkndj79_normal.jpeg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/2550324791\/jyyprdxh5bovfgkndj79_normal.jpeg",
+        "source":"&lt;a href=&quot;http:\/\/ask.fm\/&quot;&gt;Ask.fm&lt;\/a&gt;",
+        "text":"Quem \u00e9 a pessoa mais famosa (popular) que vc conhece? \u2014 Deputado Federal Acelino POP\u00d3 Freitas :) http:\/\/t.co\/VmFiKwD8",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Mon, 24 Sep 2012 19:02:45 +0000",
+        "from_user":"sandmarrylife",
+        "from_user_id":840271134,
+        "from_user_id_str":"840271134",
+        "from_user_name":"sandra santos",
+        "geo":null,
+        "id":250309312910594048,
+        "id_str":"250309312910594048",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/2639635544\/8709e99c61b7546219e400c8072dbadb_normal.jpeg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/2639635544\/8709e99c61b7546219e400c8072dbadb_normal.jpeg",
+        "source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+        "text":"@ivonildo40 Acelino Pop\u00f3,e Amauri Junior tamb\u00e9m assinaram a PEC 170\/2012.",
+        "to_user":"ivonildo40",
+        "to_user_id":398143510,
+        "to_user_id_str":"398143510",
+        "to_user_name":"ivonildo40",
+        "in_reply_to_status_id":249911018623475712,
+        "in_reply_to_status_id_str":"249911018623475712"
+    },{
+        "created_at":"Mon, 24 Sep 2012 14:20:15 +0000",
+        "from_user":"falamsnoticias",
+        "from_user_id":176082863,
+        "from_user_id_str":"176082863",
+        "from_user_name":"Fala MS Not\u00edcias",
+        "geo":null,
+        "id":250238218954485760,
+        "id_str":"250238218954485760",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1098379135\/avatar_normal.jpg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1098379135\/avatar_normal.jpg",
+        "source":"&lt;a href=&quot;http:\/\/crowdfavorite.com\/wordpress\/plugins\/twitter-tools\/&quot;&gt;falams&lt;\/a&gt;",
+        "text":"No site: Na segunda parcial, candidato Acelino declara gastos de R$ 75,8 mil  http:\/\/t.co\/xrYRP3NY",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Sun, 23 Sep 2012 06:11:29 +0000",
+        "from_user":"shethurstaaay",
+        "from_user_id":741807174,
+        "from_user_id_str":"741807174",
+        "from_user_name":"\u03b7\u03b9c\u03c3\u2113\u03b5 \u270c",
+        "geo":null,
+        "id":249752830028693505,
+        "id_str":"249752830028693505",
+        "iso_language_code":"en",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/2620356696\/image_normal.jpg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/2620356696\/image_normal.jpg",
+        "source":"&lt;a href=&quot;http:\/\/instagr.am&quot;&gt;Instagram&lt;\/a&gt;",
+        "text":"Acelino fell asleep at the bottom of the stairs \ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02 #BabyCousin #HomieCantHang http:\/\/t.co\/5xNapl1Y",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    },{
+        "created_at":"Sun, 23 Sep 2012 04:38:33 +0000",
+        "from_user":"alexandrebedeu",
+        "from_user_id":122810744,
+        "from_user_id_str":"122810744",
+        "from_user_name":"Alexandre Reis",
+        "geo":null,
+        "id":249729443285848065,
+        "id_str":"249729443285848065",
+        "iso_language_code":"pt",
+        "metadata":{
+            "result_type":"recent"
+        },
+        "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/2652354304\/71844e921bc364265bcd554f9ccf9ba7_normal.jpeg",
+        "profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/2652354304\/71844e921bc364265bcd554f9ccf9ba7_normal.jpeg",
+        "source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+        "text":"Que bela perda de tempo eu ter visto essa l\u00e1stima de UFC. Nunca mais. Isso jamais chegar\u00e1 perto das madrugadas do Acelino. Uma vergonha.",
+        "to_user":null,
+        "to_user_id":0,
+        "to_user_id_str":"0",
+        "to_user_name":null
+    }],
+    "results_per_page":15,
+    "since_id":0,
+    "since_id_str":"0"
+};
