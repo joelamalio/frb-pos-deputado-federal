@@ -166,10 +166,25 @@ function adicionarTwitte(tabela, twitte) {
         tdImg.innerHTML = '<img style="align: left;" width="60" height="60" src="'+ imagem +'"/>';
         tr.appendChild(tdImg);
         var tdTwitte = document.createElement("td");
-        tdTwitte.innerHTML = '<strong>' + titulo + '</strong><br/><span>'+ conteudo + '</span>';
+        tdTwitte.innerHTML = '<strong>' + titulo + '</strong><br/><span>'+ textoToLink(conteudo) + '</span>';
         tr.appendChild(tdTwitte);
         tabela.appendChild(tr);
     }
+}
+
+function textoToLink(conteudo) {
+    var texto = "" + conteudo;
+    var indice = texto.indexOf("http://t.co/");
+    if(indice != undefined && indice >= 0) {
+        var subStr = texto.substring(indice+12, texto.length);
+        var indiceFimLink = subStr.indexOf(" ", indice+12);
+        if(indiceFimLink <= 0) indiceFimLink = texto.length;
+        var link = texto.substring(indice, indiceFimLink);
+        var a = '<a href="' + link + '" target="_blank">' + link + '</a>';
+        if(link.length > 10)
+        texto = texto.replace(link, a);
+    }
+    return texto;
 }
 
 function adicionarNoticia(tabela, noticia) {
